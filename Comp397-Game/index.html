@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!-- Author: Jaswinder Sidhu -->
+<!-- Source: COMP397-DiverUnderWater  -->
+<!-- Last modified by: Jaswinder Sidhu -->
+<!-- Date Last Modified: July 10, 2015 -->
+<!-- Description: side scroller game of diver under water -->
+<!-- Revision History: Revised 5 times -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COMP397 - Diver</title>
+   
+    <!-- CSS Section -->
+    <link href="css/main.css" rel="stylesheet" />
+</head>
+<body onload="preload();">
+    <!-- Game Container -->
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+    <!-- JavaScript Section -->
+    <script src="Scripts/lib/Stats.js"></script>
+    <script src="Scripts/lib/easeljs-0.8.0.min.js"></script>
+    <script src="Scripts/lib/tweenjs-0.6.0.min.js"></script>
+    <script src="Scripts/lib/soundjs-0.6.0.min.js"></script>
+    <script src="Scripts/lib/preloadjs-0.6.0.min.js"></script>
+
+
+    <!-- Game Objects -->
+    <script src="Scripts/managers/assets.js"></script>
+    <script src="Scripts/utility/utility.js"></script>
+
+    <script src="Scripts/objects/gameobject.js"></script>
+    <script src="Scripts/objects/ocean.js"></script>
+    <script src="Scripts/objects/boat.js"></script>
+    <script src="Scripts/objects/island.js"></script>
+    <script src="Scripts/objects/shell.js"></script>
+    <script src="Scripts/objects/button.js"></script>
+    <script src="Scripts/objects/label.js"></script>
+
+    <script src="Scripts/objects/scoreboard.js"></script>
+    <script src="Scripts/managers/collision.js"></script>
+
+    <!--  Game states  -->
+    <script src="Scripts/states/start.js"></script>
+    <script src="Scripts/states/instructions.js"></script>
+    <script src="Scripts/states/play.js"></script>
+    <script src="Scripts/states/gameOver.js"></script>
+
+    <!-- Game Scripts -->
+    <script src="Scripts/game.js"></script>
+</body>
+</html>

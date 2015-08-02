@@ -1,0 +1,13 @@
+﻿/*Author: Jaswinder Sidhu 
+Source: COMP397 - DiverUnderWater
+Last modified by: Jaswinder Sidhu 
+Date Last Modified: July 10, 2015 
+Description: side scroller game of diver under water 
+Revision History: Revised 5 times 
+    */
+body {
+}
+
+canvas {
+    border: dashed 1px black;
+}
