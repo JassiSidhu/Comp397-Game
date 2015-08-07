@@ -26,7 +26,7 @@ var objects;
         EnemyBoat.prototype.reset = function () {
             this.y = 100 + Math.floor(Math.random() * 400); // start enemyBoat at random location
             this.x = 580; // start enemyBoat off stage
-            this.dx = Math.floor(Math.random() * 5) + 5;
+            this.dx = Math.floor(Math.random() * 5) + 6.5;
             this.dy = Math.floor(Math.random() * 4);
         };
         // PUBLIC METHODS .....................

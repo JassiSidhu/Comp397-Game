@@ -24,11 +24,10 @@ module objects {
         }
 
 
-        private reset(): void {
+        public reset(): void {
             this.y = 100 + Math.floor(Math.random() * 380); // start shell at random location
             this.x = 600; // start shell off stage
         }
-
 
         // PUBLIC METHODS .......................
         public update(): void {

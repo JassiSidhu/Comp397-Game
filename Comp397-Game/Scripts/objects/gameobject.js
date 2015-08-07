@@ -21,6 +21,10 @@ var objects;
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
         }
+        //destroy method for gameobject
+        GameObject.prototype.destroyObject = function () {
+            stage.removeChild(this);
+        };
         return GameObject;
     })(createjs.Bitmap);
     objects.GameObject = GameObject;

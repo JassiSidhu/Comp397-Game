@@ -23,5 +23,10 @@ module objects {
             this.regY = this.height * 0.5;
         }
 
+        //destroy method for gameobject
+        public destroyObject() {
+            stage.removeChild(this);
+        }
+
     }
 }   
