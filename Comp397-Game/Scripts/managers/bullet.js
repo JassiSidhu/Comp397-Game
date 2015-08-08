@@ -57,10 +57,15 @@ var managers;
                 bullet = this._bullets[count];
                 // move current bullet up stage
                 bullet.update();
-                for (var boats = 0; boats < 3; boats++) {
-                    // enemyBoats[boats].update();
-                    bulletCollision.check(bullet, enemyBoats[boats]);
+                //console.log(currentState);
+                if (currentState == level3State)
+                    bulletCollision.check(bullet, level3Enemy);
+                else {
+                    for (var boats = 0; boats < 3; boats++) {
+                        bulletCollision.check(bullet, enemyBoats[boats]);
+                    }
                 }
+                //else
                 this._checkBounds(bullet);
             }
             // fire bullet if mouse button is clicked or game container is tapped

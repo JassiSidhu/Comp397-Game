@@ -10,32 +10,32 @@ module states {
             stage.addChild(ocean);
 
             //add shell object to stage
-            shell = new objects.Shell(assets.loader.getResult("diamond"));
-            stage.addChild(shell);
+           // shell = new objects.Shell(assets.loader.getResult("diamond"));
+           // stage.addChild(shell);
 
             // add boat object to stage
-            boat = new objects.Boat(assets.loader.getResult("level3boat"));
+            boat = new objects.Boat(assets.loader.getResult("boat"));
             stage.addChild(boat);
 
             
-            //add enemyBoats to the stage
-            for (var enemyboat = 0; enemyboat < 3; enemyboat++) {
-                enemyBoats[enemyboat] = new objects.EnemyBoat(assets.loader.getResult("enemyLevel3"));
-                stage.addChild(enemyBoats[enemyboat]);
-            }
+            //add enemyBoat to the stage
+            level3Enemy = new objects.Level3Enemy(assets.loader.getResult("enemyLevel3"));
+            stage.addChild(level3Enemy);
 
             // add fuel object to stage
-            fuel = new objects.Fuel(assets.loader.getResult("fuel"),3);
-            stage.addChild(fuel);
+           // fuel = new objects.Fuel(assets.loader.getResult("fuel"),3);
+            //stage.addChild(fuel);
 
             //player has bullets in level3
             bulletManager = new managers.BulletManager();
+            bombManager = new managers.BombManager();
 
             //add scoreboard
-            scoreboard = new objects.ScoreBoard();
+            level3ScoreBoard = new objects.Level3ScoreBoard();
 
             //add collision manager
-            collision = new managers.Collision();
+            //collision = new managers.Collision();
+            bulletCollision = new managers.BulletCollision();
         }
 
         //  PUBLIC METHODS........
@@ -43,20 +43,17 @@ module states {
         public update() {
             ocean.update();
             boat.update();
-            shell.update();
+            //shell.update();
             bulletManager.update();
-            fuel.update();
+            bombManager.update();
+            //fuel.update();
 
-            for (var enemyboat = 0; enemyboat < 3; enemyboat++) {
-                enemyBoats[enemyboat].update();
-                collision.check(enemyBoats[enemyboat]);
-            }
+            level3Enemy.update();
 
+          //  collision.check(shell);
+           // collision.check(fuel);
 
-            collision.check(shell);
-            collision.check(fuel);
-
-            scoreboard.update();
+            level3ScoreBoard.update();
 
         }
 

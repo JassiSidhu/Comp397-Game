@@ -28,9 +28,28 @@ module managers {
                         if (scoreboard.lives == 0) {
                             changeState(2);
                         }
-                        // console.log(scoreboard.lives);
                     }
-                   
+                    if (currentState == level3State) {
+                        if ((gameObject1.name == "bullet") && (gameObject2.name == "level3Enemy")) {
+                            level3ScoreBoard.boatscore += 100;
+                            level3ScoreBoard.enemylives--;
+                            if (level3ScoreBoard.boatlives == 0) {
+                                changeState(2);
+                            }
+                            if (level3ScoreBoard.enemylives == 0)
+                                changeState(0);
+                        }
+
+                        if ((gameObject1.name == "bomb") && (gameObject2.name == "boat")) {
+                            level3ScoreBoard.enemyscore += 100;
+                            level3ScoreBoard.boatlives--;
+                            if (level3ScoreBoard.boatlives == 0) {
+                                changeState(2);
+                            }
+                            if (level3ScoreBoard.enemylives == 0)
+                                changeState(0);
+                        }
+                    }
 
                 }
                 gameObject1.isColliding = true;
