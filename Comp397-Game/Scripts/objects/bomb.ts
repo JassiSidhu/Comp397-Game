@@ -18,7 +18,7 @@
         }
 
         update() {
-            this.x -= 10;
+            this.x -= 8;
 
         }
     }

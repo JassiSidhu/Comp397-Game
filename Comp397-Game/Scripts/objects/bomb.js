@@ -21,7 +21,7 @@ var objects;
             this.y = level3Enemy.y;
         };
         Bomb.prototype.update = function () {
-            this.x -= 10;
+            this.x -= 8;
         };
         return Bomb;
     })(objects.GameObject);

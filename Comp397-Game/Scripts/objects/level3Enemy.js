@@ -23,13 +23,13 @@ var objects;
         Level3Enemy.prototype.update = function () {
             // this.x += this.dx; // position boat under mouse
             if (config.MOVING) {
-                this.y += 5;
+                this.y += 3;
                 if (this.y > 430) {
                     config.MOVING = false;
                 }
             }
             else {
-                this.y -= 5;
+                this.y -= 3;
                 if (this.y < 40) {
                     config.MOVING = true;
                 }

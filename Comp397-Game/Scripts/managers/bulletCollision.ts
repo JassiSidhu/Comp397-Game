@@ -28,6 +28,8 @@ module managers {
                         if (scoreboard.lives == 0) {
                             changeState(2);
                         }
+
+
                     }
                     if (currentState == level3State) {
                         if ((gameObject1.name == "bullet") && (gameObject2.name == "level3Enemy")) {
@@ -37,7 +39,7 @@ module managers {
                                 changeState(2);
                             }
                             if (level3ScoreBoard.enemylives == 0)
-                                changeState(0);
+                                changeState(2);
                         }
 
                         if ((gameObject1.name == "bomb") && (gameObject2.name == "boat")) {
