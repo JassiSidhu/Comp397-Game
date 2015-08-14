@@ -9,7 +9,7 @@ module objects {
 
             this.name = "shell";
             this.sound = "power";
-            this.dx = 5;
+            
 
             this.reset();
         }
@@ -26,13 +26,13 @@ module objects {
 
         public reset(): void {
             this.y = 100 + Math.floor(Math.random() * 380); // start shell at random location
-            this.x = 600; // start shell off stage
+            this.x = 640; // start shell off stage
         }
 
         // PUBLIC METHODS .......................
         public update(): void {
 
-            this.x -= this.dx; // moves shell across the stage
+            this.x -= 3; // moves shell across the stage
             this.checkBounds();
         }
     }

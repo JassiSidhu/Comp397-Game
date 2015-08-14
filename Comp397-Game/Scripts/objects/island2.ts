@@ -2,14 +2,14 @@
 
 module objects {
     // Island Class ......................
-    export class Island extends objects.GameObject {
+    export class Island2 extends objects.GameObject {
 
         // CONSTRUCTOR ...........................
         constructor(imageString: string) {
             super(imageString);
 
-            this.name = "island1";
-            
+            this.name = "island2";
+
 
             this.reset();
         }
@@ -25,9 +25,8 @@ module objects {
 
 
         public reset(): void {
-            this.y = 250 + Math.floor(Math.random() * 150); // start island at random location
+            this.y = 50 + Math.floor(Math.random() * 100); // start island at random location
             this.x = 580; // start island off stage
-           // this.dx = 4;
         }
 
         // PUBLIC METHODS .....................
@@ -36,4 +35,4 @@ module objects {
             this.checkBounds();
         }
     }
-}   
+}    

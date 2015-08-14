@@ -15,7 +15,6 @@ var objects;
             _super.call(this, imageString);
             this.name = "shell";
             this.sound = "power";
-            this.dx = 5;
             this.reset();
         }
         // PRIVATE METHODS .....................
@@ -27,11 +26,11 @@ var objects;
         };
         Shell.prototype.reset = function () {
             this.y = 100 + Math.floor(Math.random() * 380); // start shell at random location
-            this.x = 600; // start shell off stage
+            this.x = 640; // start shell off stage
         };
         // PUBLIC METHODS .......................
         Shell.prototype.update = function () {
-            this.x -= this.dx; // moves shell across the stage
+            this.x -= 3; // moves shell across the stage
             this.checkBounds();
         };
         return Shell;

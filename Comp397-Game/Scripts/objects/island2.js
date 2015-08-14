@@ -8,33 +8,32 @@ var __extends = this.__extends || function (d, b) {
 var objects;
 (function (objects) {
     // Island Class ......................
-    var Island = (function (_super) {
-        __extends(Island, _super);
+    var Island2 = (function (_super) {
+        __extends(Island2, _super);
         // CONSTRUCTOR ...........................
-        function Island(imageString) {
+        function Island2(imageString) {
             _super.call(this, imageString);
-            this.name = "island1";
+            this.name = "island2";
             this.reset();
         }
         // PRIVATE METHODS .........................
-        Island.prototype.checkBounds = function () {
+        Island2.prototype.checkBounds = function () {
             // check if island has left screen
             if (this.x < 10) {
                 this.reset();
             }
         };
-        Island.prototype.reset = function () {
-            this.y = 250 + Math.floor(Math.random() * 150); // start island at random location
+        Island2.prototype.reset = function () {
+            this.y = 50 + Math.floor(Math.random() * 100); // start island at random location
             this.x = 580; // start island off stage
-            // this.dx = 4;
         };
         // PUBLIC METHODS .....................
-        Island.prototype.update = function () {
+        Island2.prototype.update = function () {
             this.x -= 3; // move island across the stage
             this.checkBounds();
         };
-        return Island;
+        return Island2;
     })(objects.GameObject);
-    objects.Island = Island;
+    objects.Island2 = Island2;
 })(objects || (objects = {}));
-//# sourceMappingURL=island.js.map
+//# sourceMappingURL=island2.js.map

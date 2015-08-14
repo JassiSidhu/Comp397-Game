@@ -7,24 +7,16 @@ var states;
             //add ocean object to stage
             ocean = new objects.Ocean(assets.loader.getResult("ocean"));
             stage.addChild(ocean);
-            //add islands to the stage
-            for (var island = 0; island < 2; island++) {
-                islands[island] = new objects.Island(assets.loader.getResult("island"));
-                stage.addChild(islands[island]);
-            }
             //Add start objects....
             start = new createjs.Bitmap(assets.loader.getResult("moveTo2"));
             stage.addChild(start);
-            playButton = new objects.Button(assets.loader.getResult("play"), 300, 360, false);
+            playButton = new objects.Button(assets.loader.getResult("play"), 460, 100, false);
             stage.addChild(playButton);
             playButton.on("click", playLevel2ButtonClicked);
         }
         //PUBLIC METHODS........
         MoveToLevel2.prototype.update = function () {
             ocean.update();
-            for (var island = 0; island < 2; island++) {
-                islands[island].update();
-            }
         };
         return MoveToLevel2;
     })();

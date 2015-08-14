@@ -7,35 +7,35 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // enemyBoat Class ......................
-    var EnemyBoat = (function (_super) {
-        __extends(EnemyBoat, _super);
+    // enemyBoat2 Class ......................
+    var EnemyBoat2 = (function (_super) {
+        __extends(EnemyBoat2, _super);
         // CONSTRUCTOR ...........................
-        function EnemyBoat(imageString) {
+        function EnemyBoat2(imageString) {
             _super.call(this, imageString);
-            this.name = "enemyBoat";
+            this.name = "enemyBoat2";
             this.reset();
         }
         // PRIVATE METHODS .........................
-        EnemyBoat.prototype.checkBounds = function () {
-            // check if enemyBoat has left screen
+        EnemyBoat2.prototype.checkBounds = function () {
+            // check if enemyBoat2 has left screen
             if (this.x < 0) {
                 this.reset();
             }
         };
         // PUBLIC METHODS .....................
-        EnemyBoat.prototype.reset = function () {
-            this.y = 50 + Math.floor(Math.random() * 50); // start enemyBoat at random location
-            this.x = 580; // start enemyBoat off stage
+        EnemyBoat2.prototype.reset = function () {
+            this.y = 200 + Math.floor(Math.random() * 50); // start enemyBoat2 at random location
+            this.x = 580; // start enemyBoat2 off stage
             this.dx = Math.floor(Math.random() * 5) + 6.5;
             this.dy = Math.floor(Math.random() * 4);
         };
-        EnemyBoat.prototype.update = function () {
-            this.x -= this.dx; // move enemyBoat across the stage
+        EnemyBoat2.prototype.update = function () {
+            this.x -= this.dx; // move enemyBoat2 across the stage
             this.checkBounds();
         };
-        return EnemyBoat;
+        return EnemyBoat2;
     })(objects.GameObject);
-    objects.EnemyBoat = EnemyBoat;
+    objects.EnemyBoat2 = EnemyBoat2;
 })(objects || (objects = {}));
-//# sourceMappingURL=enemyboat.js.map
+//# sourceMappingURL=enemyboat2.js.map

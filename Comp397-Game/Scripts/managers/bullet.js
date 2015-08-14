@@ -61,9 +61,9 @@ var managers;
                 if (currentState == level3State)
                     bulletCollision.check(bullet, level3Enemy);
                 else {
-                    for (var boats = 0; boats < 3; boats++) {
-                        bulletCollision.check(bullet, enemyBoats[boats]);
-                    }
+                    bulletCollision.check(bullet, enemyBoat1);
+                    bulletCollision.check(bullet, enemyBoat2);
+                    bulletCollision.check(bullet, enemyBoat3);
                 }
                 //else
                 this._checkBounds(bullet);
