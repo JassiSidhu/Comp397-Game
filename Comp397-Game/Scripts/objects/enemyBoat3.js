@@ -14,6 +14,7 @@ var objects;
         function EnemyBoat3(imageString) {
             _super.call(this, imageString);
             this.name = "enemyBoat3";
+            this.sound = "collide";
             this.reset();
         }
         // PRIVATE METHODS .........................

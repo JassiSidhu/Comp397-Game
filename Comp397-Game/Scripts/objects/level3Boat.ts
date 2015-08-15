@@ -21,7 +21,8 @@ module objects {
         // PUBLIC METHODS .......................
         public update(): void {
             this.x = stage.mouseX; // position boat under mouse
-            
+            if (this.y < 140)
+                this.y = 140;
         }
 
         private fire(event: KeyboardEvent) {

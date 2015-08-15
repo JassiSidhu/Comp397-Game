@@ -14,6 +14,7 @@ var objects;
         function EnemyBoat(imageString) {
             _super.call(this, imageString);
             this.name = "enemyBoat";
+            this.sound = "collide";
             this.reset();
         }
         // PRIVATE METHODS .........................
@@ -25,7 +26,7 @@ var objects;
         };
         // PUBLIC METHODS .....................
         EnemyBoat.prototype.reset = function () {
-            this.y = 50 + Math.floor(Math.random() * 50); // start enemyBoat at random location
+            this.y = 60 + Math.floor(Math.random() * 50); // start enemyBoat at random location
             this.x = 580; // start enemyBoat off stage
             this.dx = Math.floor(Math.random() * 5) + 6.5;
             this.dy = Math.floor(Math.random() * 4);

@@ -9,7 +9,7 @@ module objects {
             super(imageString);
 
             this.name = "island2";
-
+            this.sound = "collide";
 
             this.reset();
         }
@@ -18,15 +18,15 @@ module objects {
         private checkBounds(): void {
 
             // check if island has left screen
-            if (this.x < 10) {
+            if (this.x < 0) {
                 this.reset();
             }
         }
 
 
         public reset(): void {
-            this.y = 50 + Math.floor(Math.random() * 100); // start island at random location
-            this.x = 580; // start island off stage
+            this.y = 100 + Math.floor(Math.random() * 40); // start island at random location
+            this.x = 620; // start island off stage
         }
 
         // PUBLIC METHODS .....................

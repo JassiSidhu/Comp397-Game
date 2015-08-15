@@ -7,7 +7,7 @@ module managers {
         }
 
         //PUBLIC METHODS ....................
-        // check the distance between bullet and any other game object
+        // check the distance between two game objects
         public check(gameObject1: objects.GameObject, gameObject2: objects.GameObject) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
@@ -18,17 +18,20 @@ module managers {
             p2.x = gameObject2.x;
             p2.y = gameObject2.y;
 
-            if (utility.distance(p1, p2) < ((gameObject1.height * 0.5) + (gameObject2.height * 0.5))) {
-                if (gameObject1.isColliding == false) {
-                   // createjs.Sound.play(gameObject.sound);
-
-                    if ((gameObject1.name == "bullet") && (gameObject2.name == "enemyBoat1" || gameObject2.name == "enemyBoat2" || gameObject2.name == "enemyBoat3")) {
+            if (utility.distance(p1, p2) < ((gameObject1.height * 0.5) + (gameObject2.height * 0.5)))
+            {
+                if (gameObject1.isColliding == false)
+                {
+                    //collision between bullets and other objects at level2
+                    if ((gameObject1.name == "bullet") && (gameObject2.name == "enemyBoat1" || gameObject2.name == "enemyBoat2" || gameObject2.name == "enemyBoat3"))
+                    {
 
                         scoreboard.score+= 50;
-                        if (scoreboard.lives == 0) {
+                        if (scoreboard.lives == 0)
+                        {
                             changeState(2);
-                            scoreLabel = new createjs.Text("Your Scores: " + scoreboard.score, "40px Consolas", "#ffffffff");
-                            scoreLabel.x = 100;
+                            scoreLabel = new createjs.Text("Your Scores: " + scoreboard.score, "40px Consolas", "#ffffff");
+                            scoreLabel.x = 120;
                             scoreLabel.y = 250;
                             stage.addChild(scoreLabel);
                         }
@@ -42,7 +45,8 @@ module managers {
                             enemyBoat1.update();
                         }
 
-                       if (gameObject2.name == "enemyBoat2") {
+                        if (gameObject2.name == "enemyBoat2")
+                        {
                             gameObject2.destroyObject();
                             enemyBoat2 = new objects.EnemyBoat2(assets.loader.getResult("enemyBoat"));
                             stage.addChild(enemyBoat2);
@@ -60,23 +64,35 @@ module managers {
                        }
 
                     }
-                    if (currentState == level3State) {
+                    // collisions at level3
+                    if (currentState == level3State)
+                    {
                         if ((gameObject1.name == "bullet") && (gameObject2.name == "level3Enemy")) {
                             level3ScoreBoard.boatscore += 100;
                             level3ScoreBoard.enemylives--;
                             if (level3ScoreBoard.boatlives == 0) {
 
-                                changeState(2);
-                                scoreLabel = new createjs.Text("Your Scores: " + level3ScoreBoard.boatscore, "40px Consolas", "#ffffffff");
-                                scoreLabel.x = 100;
-                                scoreLabel.y = 250;
+                                changeState(8);
+                                winLoseLabel = new createjs.Text("You Lose.... ", "60px Consolas", "#ffffff");
+                                winLoseLabel.x = 130;
+                                winLoseLabel.y = 100;
+                                stage.addChild(winLoseLabel);
+
+                                scoreLabel = new createjs.Text("Your Scores: " + level3ScoreBoard.boatscore, "40px Consolas", "#ffffff");
+                                scoreLabel.x = 130;
+                                scoreLabel.y = 230;
                                 stage.addChild(scoreLabel);
                             }
                             if (level3ScoreBoard.enemylives == 0) {
-                                changeState(2);
-                                scoreLabel = new createjs.Text("Your Scores: " + level3ScoreBoard.boatscore, "40px Consolas", "#ffffffff");
-                                scoreLabel.x = 100;
-                                scoreLabel.y = 250;
+                                changeState(8);
+                                winLoseLabel = new createjs.Text("You Win.... ", "60px Consolas", "#ffffff");
+                                winLoseLabel.x = 130;
+                                winLoseLabel.y = 100;
+                                stage.addChild(winLoseLabel);
+
+                                scoreLabel = new createjs.Text("Your Scores: " + level3ScoreBoard.boatscore, "40px Consolas", "#ffffff");
+                                scoreLabel.x = 130;
+                                scoreLabel.y = 230;
                                 stage.addChild(scoreLabel);
                             }
                         }
@@ -85,17 +101,27 @@ module managers {
                             level3ScoreBoard.enemyscore += 100;
                             level3ScoreBoard.boatlives--;
                             if (level3ScoreBoard.boatlives == 0) {
-                                changeState(2);
-                                scoreLabel = new createjs.Text("Your Scores: " + level3ScoreBoard.boatscore, "40px Consolas", "#ffffffff");
-                                scoreLabel.x = 100;
-                                scoreLabel.y = 250;
+                                changeState(8);
+                                winLoseLabel = new createjs.Text("You Lose.... ", "60px Consolas", "#ffffff");
+                                winLoseLabel.x = 130;
+                                winLoseLabel.y = 100;
+                                stage.addChild(winLoseLabel);
+
+                                scoreLabel = new createjs.Text("Your Scores: " + level3ScoreBoard.boatscore, "40px Consolas", "#ffffff");
+                                scoreLabel.x = 130;
+                                scoreLabel.y = 230;
                                 stage.addChild(scoreLabel);
                             }
                             if (level3ScoreBoard.enemylives == 0) {
-                                changeState(0);
-                                scoreLabel = new createjs.Text("Your Scores: " + level3ScoreBoard.boatscore, "40px Consolas", "#ffffffff");
-                                scoreLabel.x = 100;
-                                scoreLabel.y = 250;
+                                changeState(8);
+                                winLoseLabel = new createjs.Text("You Win.... ", "60px Consolas", "#ffffff");
+                                winLoseLabel.x = 130;
+                                winLoseLabel.y = 100;
+                                stage.addChild(winLoseLabel);
+
+                                scoreLabel = new createjs.Text("Your Scores: " + level3ScoreBoard.boatscore, "40px Consolas", "#ffffff");
+                                scoreLabel.x = 130;
+                                scoreLabel.y = 230;
                                 stage.addChild(scoreLabel);
                             }
                         }

@@ -4,25 +4,20 @@ module states {
     export class MoveToLevel3 {
         //CONSTRUCTOR.........
         constructor() {
-            //add ocean object to stage
-            ocean = new objects.Ocean(assets.loader.getResult("ocean"));
-            stage.addChild(ocean);
-
-           
+                      
             //Add start objects....
             start = new createjs.Bitmap(assets.loader.getResult("moveTo3"));
             stage.addChild(start);
 
 
-            playButton = new objects.Button(assets.loader.getResult("play"), 460, 100, false);
+            playButton = new objects.Button(assets.loader.getResult("play"), 270, 435, false);
             stage.addChild(playButton);
             playButton.on("click", playLevel3ButtonClicked);
         }
 
         //PUBLIC METHODS........
         public update() {
-            ocean.update();
-            
+           
         }
 
     }

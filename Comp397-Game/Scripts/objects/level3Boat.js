@@ -24,6 +24,8 @@ var objects;
         // PUBLIC METHODS .......................
         Level3Boat.prototype.update = function () {
             this.x = stage.mouseX; // position boat under mouse
+            if (this.y < 140)
+                this.y = 140;
         };
         Level3Boat.prototype.fire = function (event) {
             switch (event.keyCode) {

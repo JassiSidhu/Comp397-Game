@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<!-- Author: Jaswinder Sidhu -->
-<!-- Source: COMP397-DiverUnderWater  -->
+<!-- Author: Jaswinder Sidhu/Kirandeep Kaur -->
+<!-- Source: COMP397-Game -->
 <!-- Last modified by: Jaswinder Sidhu -->
-<!-- Date Last Modified: July 10, 2015 -->
-<!-- Description: side scroller game of diver under water -->
-<!-- Revision History: Revised 5 times -->
+<!-- Date Last Modified: August 14, 2015 -->
+<!-- Description: side scroller game of boat in the sea-->
+<!-- Revision History: Revised 10 times -->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>COMP397 - Diver</title>
+    <title>COMP397 - Game</title>
    
     <!-- CSS Section -->
     <link href="css/main.css" rel="stylesheet" />
@@ -34,18 +34,36 @@
     <script src="Scripts/objects/ocean.js"></script>
     <script src="Scripts/objects/boat.js"></script>
     <script src="Scripts/objects/island.js"></script>
-    <script src="Scripts/objects/shell.js"></script>
+    <script src="Scripts/objects/island2.js"></script>
+    <script src="Scripts/objects/diamond.js"></script>
     <script src="Scripts/objects/button.js"></script>
-    <script src="Scripts/objects/label.js"></script>
+    <script src="Scripts/objects/bullet.js"></script>
+    <script src="Scripts/objects/enemyBoat.js"></script>
+    <script src="Scripts/objects/enemyBoat2.js"></script>
+    <script src="Scripts/objects/enemyBoat3.js"></script>
+    <script src="Scripts/objects/level3Boat.js"></script>
+    <script src="Scripts/objects/level3Enemy.js"></script>
+    <script src="Scripts/objects/bomb.js"></script>
+    <script src="Scripts/config/config.js"></script>
 
     <script src="Scripts/objects/scoreboard.js"></script>
+    <script src="Scripts/objects/level3ScoreBoard.js"></script>
+
     <script src="Scripts/managers/collision.js"></script>
+    <script src="Scripts/managers/bullet.js"></script>
+    <script src="Scripts/managers/bulletCollision.js"></script>
+    <script src="Scripts/managers/bomb.js"></script>
 
     <!--  Game states  -->
     <script src="Scripts/states/start.js"></script>
     <script src="Scripts/states/instructions.js"></script>
     <script src="Scripts/states/play.js"></script>
     <script src="Scripts/states/gameOver.js"></script>
+    <script src="Scripts/states/MoveToLevel2 .js"></script>
+    <script src="Scripts/states/MoveToLevel3.js"></script>
+    <script src="Scripts/states/level2.js"></script>
+    <script src="Scripts/states/level3.js"></script>
+    <script src="Scripts/states/win-lose.js"></script>
 
     <!-- Game Scripts -->
     <script src="Scripts/game.js"></script>

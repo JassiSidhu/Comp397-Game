@@ -8,8 +8,8 @@ var objects;
             //Public properties..
             this.lives = 5;
             this.score = 0;
-            this.liveLabel = new createjs.Text("Lives: 5 ", "40px Consolas", "#ffffff00");
-            this.scoreLabel = new createjs.Text("Scores:  ", "40px Consolas", "#ffffff00");
+            this.liveLabel = new createjs.Text("Lives: 5 ", "40px Consolas", "#ffffff");
+            this.scoreLabel = new createjs.Text("Scores:  ", "40px Consolas", "#ffffff");
             this.liveLabel.x = 350;
             stage.addChild(this.liveLabel);
             stage.addChild(this.scoreLabel);
@@ -18,6 +18,12 @@ var objects;
         ScoreBoard.prototype.update = function () {
             this.liveLabel.text = "Live:  " + this.lives;
             this.scoreLabel.text = "Scores:  " + this.score;
+            if (this.score == 500 && currentState == playState) {
+                changeState(4);
+            }
+            if (this.score == 5000 && currentState == level2State) {
+                changeState(6);
+            }
         };
         return ScoreBoard;
     })();

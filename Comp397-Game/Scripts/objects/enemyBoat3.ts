@@ -9,6 +9,7 @@ module objects {
             super(imageString);
 
             this.name = "enemyBoat3";
+            this.sound = "collide";
 
             this.reset();
         }

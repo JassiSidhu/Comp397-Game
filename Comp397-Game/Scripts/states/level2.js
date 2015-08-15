@@ -18,7 +18,7 @@ var states;
             stage.addChild(enemyBoat2);
             enemyBoat3 = new objects.EnemyBoat3(assets.loader.getResult("enemyBoat"));
             stage.addChild(enemyBoat3);
-            //player have bullets in level2
+            //player has bullets in level2
             bulletManager = new managers.BulletManager();
             //add scoreboard
             scoreboard = new objects.ScoreBoard();
@@ -31,7 +31,6 @@ var states;
         Level2.prototype.update = function () {
             ocean.update();
             boat.update();
-            shell.update();
             bulletManager.update();
             enemyBoat1.update();
             enemyBoat2.update();

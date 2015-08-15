@@ -6,20 +6,20 @@ var objects;
         //Constructor...
         function Level3ScoreBoard() {
             //Public properties..
-            this.boatlives = 100;
+            this.boatlives = 50;
             this.boatscore = 0;
-            this.enemylives = 100;
+            this.enemylives = 50;
             this.enemyscore = 0;
-            this.boatliveLabel = new createjs.Text("Your Health: 100 ", "30px Consolas", "#ffffff00");
-            this.boatscoreLabel = new createjs.Text("Your Scores: ", "30px Consolas", "#ffffff00");
-            this.enemyliveLabel = new createjs.Text("Enemy Health: 100 ", "30px Consolas", "#ffffff00");
-            this.enemyscoreLabel = new createjs.Text("Enemy Scores: ", "30px Consolas", "#ffffff00");
+            this.boatliveLabel = new createjs.Text("Your Health: 100 ", "30px Consolas", "#ffffff");
+            this.boatscoreLabel = new createjs.Text("Your Scores: ", "30px Consolas", "#ffffff");
+            this.enemyliveLabel = new createjs.Text("Enemy Health: 100 ", "30px Consolas", "#ffffff");
+            this.enemyscoreLabel = new createjs.Text("Enemy Scores: ", "30px Consolas", "#ffffff");
             this.boatliveLabel.x = 0;
             this.boatscoreLabel.x = 300;
             this.enemyliveLabel.x = 0;
             this.enemyscoreLabel.x = 300;
-            this.enemyliveLabel.y = 50;
-            this.enemyscoreLabel.y = 50;
+            this.enemyliveLabel.y = 30;
+            this.enemyscoreLabel.y = 30;
             stage.addChild(this.boatliveLabel);
             stage.addChild(this.boatscoreLabel);
             stage.addChild(this.enemyliveLabel);

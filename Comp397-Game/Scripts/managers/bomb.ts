@@ -1,44 +1,33 @@
 ﻿module managers {
-    // Bomb MANAGER CLASS +++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // Bomb MANAGER CLASS ........................................
     export class BombManager {
-        // PRIVATE PROPERTIES +++++++++++++++++++++++++++++++++++++++++++++++++++
+        // PRIVATE PROPERTIES .....................................
         private _bombs = [];
         private _bombCount: number = 0;
         
-        // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // CONSTRUCTOR ................................................
         constructor() {
 
         }
 
-        // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-        // bomb FIRE METHOD
-        public _fire() {
-            // create two bombs on either side of  plane
-            var bomb: objects.Bomb = new objects.Bomb();
-
-            stage.addChild(bomb);
-            bomb.init();
-            this._bombs.push(bomb);
-            
-
-            // Play bomb Sound
-            // createjs.Sound.play("bomb");
-        } // end fire
+        // PRIVATE METHODS ...........................................
 
         // bomb DESTROY METHOD
-        private _destroyBomb(bomb: objects.Bomb) {
+        private _destroyBomb(bomb: objects.Bomb)
+        {
             var len: number = this._bombs.length;
-
             // remove bomb from game and from bomb array
-            for (var count = 0; count < len; count++) {
-                if (this._bombs[count] == bomb) {
+            for (var count = 0; count < len; count++)
+            {
+                if (this._bombs[count] == bomb)
+                {
                     this._bombs.splice(count, 1);
                     stage.removeChild(bomb);
                 }
             }
         } // end destroybomb
 
+        //checkbounds method
         private _checkBounds(bomb: objects.Bomb) {
             // check to see if the bomb has left the top of the stage
             if (bomb.y < 0) {
@@ -61,8 +50,19 @@
             }
         }
 
-        // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+        //Public Methods.............................................
+
+        // bomb FIRE METHOD
+        public _fire() {
+            // create two bombs on either side of  plane
+            var bomb: objects.Bomb = new objects.Bomb();
+
+            stage.addChild(bomb);
+            bomb.init();
+            this._bombs.push(bomb);
+
+        } // end fire
 
         // UPDATE METHOD
         public update() {

@@ -1,11 +1,9 @@
-/// <reference path="objects/boat.ts" />
-/// <reference path="objects/boat.ts" />
-//Author: Jaswinder Sidhu 
-//Source: COMP397 - DiverUnderWater
+//Author: Jaswinder Sidhu /Kirandeep Kaur
+//Source: COMP397 - Game
 //Last modified by: Jaswinder Sidhu 
-//Date Last Modified: July 10, 2015 
-//Description: side scroller game of diver under water 
-//Revision History: Revised 5 times 
+//Date Last Modified: August 14, 2015 
+//Description: side scroller game of boat in the sea 
+//Revision History: Revised 10 times 
 /// <reference path="typings/stats/stats.d.ts" />
 /// <reference path="typings/easeljs/easeljs.d.ts" />
 /// <reference path="typings/tweenjs/tweenjs.d.ts" />
@@ -16,16 +14,32 @@
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/ocean.ts" />
 /// <reference path="objects/island.ts" />
-/// <reference path="objects/boat.ts" />
-/// <reference path="objects/shell.ts" />
+/// <reference path="objects/island2.ts" />
+/// <reference path="objects/diamond.ts" />
 /// <reference path="objects/button.ts" />
-/// <reference path="objects/label.ts" />
+/// <reference path="objects/level3enemy.ts" />
+/// <reference path="objects/level3boat.ts" />
+/// <reference path="objects/bomb.ts" />
+/// <reference path="objects/enemyboat.ts" />
+/// <reference path="objects/enemyboat2.ts" />
+/// <reference path="objects/enemyboat3.ts" />
 /// <reference path="objects/scoreboard.ts" />
+/// <reference path="objects/level3scoreboard.ts" />
 /// <reference path="managers/collision.ts" />
+/// <reference path="managers/bomb.ts" />
+/// <reference path="objects/bullet.ts" />
+/// <reference path="config/config.ts" />
+/// <reference path="managers/bullet.ts" />
+/// <reference path="managers/bulletcollision.ts" />
 /// <reference path="states/start.ts" />
 /// <reference path="states/instructions.ts" />
 /// <reference path="states/play.ts" />
 /// <reference path="states/gameover.ts" />
+/// <reference path="states/movetolevel2 .ts" />
+/// <reference path="states/movetolevel3.ts" />
+/// <reference path="states/level2.ts" />
+/// <reference path="states/level3.ts" />
+/// <reference path="states/win-lose.ts" />
 // Game Framework Variables
 var canvas = document.getElementById("canvas");
 var stage;
@@ -33,29 +47,49 @@ var stats;
 // Game Variables
 var ocean;
 var boat;
-var shell;
-var islands = [];
-//var sharks: objects.Shark[] = [];
+var diamond;
+var island1;
+var island2;
+var enemyBoat1;
+var enemyBoat2;
+var enemyBoat3;
+var level3Boat;
+var level3Enemy;
+//score variables
 var scoreboard;
+var level3ScoreBoard;
 //state variables
 var currentState;
 //Game Managers
 var assets;
 var collision;
-//Three game states
+var bulletManager;
+var bombManager;
+var bulletCollision;
+// game states
 var playState;
 var startState;
 var gameOverState;
 var instructionState;
+var moveTo2State;
+var level2State;
+var moveTo3State;
+var level3State;
+var winLoseState;
 //three images for three states
 var start;
 var gameOver;
 var instructionsPage;
+//labels for scores at the end
+var winLoseLabel;
+var scoreLabel;
 //buttons for navigation
 var tryButton;
 var playButton;
 var instructionsButton;
 var backButton;
+var level2Button;
+var level3Button;
 // Preloader Function
 function preload() {
     assets = new managers.Asset();
@@ -94,6 +128,16 @@ function playButtonClicked(event) {
     stage.removeAllChildren();
     changeState(1);
 }
+//play level 2 function
+function playLevel2ButtonClicked(event) {
+    stage.removeAllChildren();
+    changeState(5);
+}
+//play level 3 function
+function playLevel3ButtonClicked(event) {
+    stage.removeAllChildren();
+    changeState(7);
+}
 //try again button function
 function tryButtonClicked(event) {
     stage.removeAllChildren();
@@ -126,6 +170,26 @@ function changeState(state) {
         case 3:
             instructionState = new states.Instructions();
             currentState = instructionState;
+            break;
+        case 4:
+            moveTo2State = new states.MoveToLevel2();
+            currentState = moveTo2State;
+            break;
+        case 5:
+            level2State = new states.Level2();
+            currentState = level2State;
+            break;
+        case 6:
+            moveTo3State = new states.MoveToLevel3();
+            currentState = moveTo3State;
+            break;
+        case 7:
+            level3State = new states.Level3();
+            currentState = level3State;
+            break;
+        case 8:
+            winLoseState = new states.WinLose();
+            currentState = winLoseState;
             break;
     }
 }

@@ -14,18 +14,19 @@ var objects;
         function Island2(imageString) {
             _super.call(this, imageString);
             this.name = "island2";
+            this.sound = "collide";
             this.reset();
         }
         // PRIVATE METHODS .........................
         Island2.prototype.checkBounds = function () {
             // check if island has left screen
-            if (this.x < 10) {
+            if (this.x < 0) {
                 this.reset();
             }
         };
         Island2.prototype.reset = function () {
-            this.y = 50 + Math.floor(Math.random() * 100); // start island at random location
-            this.x = 580; // start island off stage
+            this.y = 100 + Math.floor(Math.random() * 40); // start island at random location
+            this.x = 620; // start island off stage
         };
         // PUBLIC METHODS .....................
         Island2.prototype.update = function () {

@@ -13,6 +13,7 @@ var objects;
             _super.call(this, assets.loader.getResult("bullet"));
             this.init();
             this.name = "bullet";
+            this.sound = "bullets";
             stage.addChild(this);
         }
         // PUBLIC METHODS

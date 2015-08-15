@@ -1,24 +1,14 @@
 var managers;
 (function (managers) {
-    // Bomb MANAGER CLASS +++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // Bomb MANAGER CLASS ........................................
     var BombManager = (function () {
-        // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // CONSTRUCTOR ................................................
         function BombManager() {
-            // PRIVATE PROPERTIES +++++++++++++++++++++++++++++++++++++++++++++++++++
+            // PRIVATE PROPERTIES .....................................
             this._bombs = [];
             this._bombCount = 0;
         }
-        // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++
-        // bomb FIRE METHOD
-        BombManager.prototype._fire = function () {
-            // create two bombs on either side of  plane
-            var bomb = new objects.Bomb();
-            stage.addChild(bomb);
-            bomb.init();
-            this._bombs.push(bomb);
-            // Play bomb Sound
-            // createjs.Sound.play("bomb");
-        }; // end fire
+        // PRIVATE METHODS ...........................................
         // bomb DESTROY METHOD
         BombManager.prototype._destroyBomb = function (bomb) {
             var len = this._bombs.length;
@@ -30,6 +20,7 @@ var managers;
                 }
             }
         }; // end destroybomb
+        //checkbounds method
         BombManager.prototype._checkBounds = function (bomb) {
             // check to see if the bomb has left the top of the stage
             if (bomb.y < 0) {
@@ -48,7 +39,15 @@ var managers;
                 this._destroyBomb(bomb);
             }
         };
-        // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        //Public Methods.............................................
+        // bomb FIRE METHOD
+        BombManager.prototype._fire = function () {
+            // create two bombs on either side of  plane
+            var bomb = new objects.Bomb();
+            stage.addChild(bomb);
+            bomb.init();
+            this._bombs.push(bomb);
+        }; // end fire
         // UPDATE METHOD
         BombManager.prototype.update = function () {
             var len = this._bombs.length;

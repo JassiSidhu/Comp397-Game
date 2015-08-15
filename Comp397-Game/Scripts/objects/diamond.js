@@ -7,34 +7,34 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // Shell Class .......................
-    var Shell = (function (_super) {
-        __extends(Shell, _super);
+    // Diamond Class .......................
+    var Diamond = (function (_super) {
+        __extends(Diamond, _super);
         // CONSTRUCTOR.........................
-        function Shell(imageString) {
+        function Diamond(imageString) {
             _super.call(this, imageString);
-            this.name = "shell";
+            this.name = "diamond";
             this.sound = "power";
             this.reset();
         }
         // PRIVATE METHODS .....................
-        Shell.prototype.checkBounds = function () {
-            // check if shell has left screen
-            if (this.x < 20) {
+        Diamond.prototype.checkBounds = function () {
+            // check if diamond has left screen
+            if (this.x < 0) {
                 this.reset();
             }
         };
-        Shell.prototype.reset = function () {
-            this.y = 100 + Math.floor(Math.random() * 380); // start shell at random location
-            this.x = 640; // start shell off stage
+        Diamond.prototype.reset = function () {
+            this.y = 100 + Math.floor(Math.random() * 350); // start diamond at random location
+            this.x = 640; // start diamond off stage
         };
         // PUBLIC METHODS .......................
-        Shell.prototype.update = function () {
-            this.x -= 3; // moves shell across the stage
+        Diamond.prototype.update = function () {
+            this.x -= 3; // moves diamond across the stage
             this.checkBounds();
         };
-        return Shell;
+        return Diamond;
     })(objects.GameObject);
-    objects.Shell = Shell;
+    objects.Diamond = Diamond;
 })(objects || (objects = {}));
-//# sourceMappingURL=shell.js.map
+//# sourceMappingURL=diamond.js.map

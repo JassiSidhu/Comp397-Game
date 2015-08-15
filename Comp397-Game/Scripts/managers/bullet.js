@@ -1,24 +1,14 @@
 var managers;
 (function (managers) {
-    // BULLET MANAGER CLASS +++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // BULLET MANAGER CLASS ........................................
     var BulletManager = (function () {
-        // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // CONSTRUCTOR .............................................
         function BulletManager() {
-            // PRIVATE PROPERTIES +++++++++++++++++++++++++++++++++++++++++++++++++++
+            // PRIVATE PROPERTIES .......................................
             this._bullets = [];
             this._bulletCount = 0;
         }
-        // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++
-        // BULLET FIRE METHOD
-        BulletManager.prototype._fire = function () {
-            // create two bullets on either side of  plane
-            var bullet = new objects.Bullet();
-            stage.addChild(bullet);
-            bullet.init();
-            this._bullets.push(bullet);
-            // Play Bullet Sound
-            // createjs.Sound.play("bullet");
-        }; // end fire
+        // PRIVATE METHODS .........................................
         // BULLET DESTROY METHOD
         BulletManager.prototype._destroyBullet = function (bullet) {
             var len = this._bullets.length;
@@ -30,6 +20,7 @@ var managers;
                 }
             }
         }; // end destroyBullet
+        //check bounds method
         BulletManager.prototype._checkBounds = function (bullet) {
             // check to see if the bullet has left the top of the stage
             if (bullet.y < 0) {
@@ -48,7 +39,16 @@ var managers;
                 this._destroyBullet(bullet);
             }
         };
-        // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // PUBLIC METHODS ...................................................
+        // BULLET FIRE METHOD
+        BulletManager.prototype._fire = function () {
+            // create two bullets on either side of  plane
+            var bullet = new objects.Bullet();
+            stage.addChild(bullet);
+            createjs.Sound.play(bullet.sound);
+            bullet.init();
+            this._bullets.push(bullet);
+        }; // end fire
         // UPDATE METHOD
         BulletManager.prototype.update = function () {
             var len = this._bullets.length;
@@ -65,7 +65,6 @@ var managers;
                     bulletCollision.check(bullet, enemyBoat2);
                     bulletCollision.check(bullet, enemyBoat3);
                 }
-                //else
                 this._checkBounds(bullet);
             }
             // fire bullet if mouse button is clicked or game container is tapped

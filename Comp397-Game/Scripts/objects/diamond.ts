@@ -1,13 +1,13 @@
 ﻿/// <reference path="../managers/assets.ts" />
 
 module objects {
-    // Shell Class .......................
-    export class Shell extends objects.GameObject {
+    // Diamond Class .......................
+    export class Diamond extends objects.GameObject {
         // CONSTRUCTOR.........................
         constructor(imageString: string) {
             super(imageString);
 
-            this.name = "shell";
+            this.name = "diamond";
             this.sound = "power";
             
 
@@ -17,22 +17,22 @@ module objects {
         // PRIVATE METHODS .....................
         private checkBounds(): void {
 
-            // check if shell has left screen
-            if (this.x < 20) {
+            // check if diamond has left screen
+            if (this.x < 0) {
                 this.reset();
             }
         }
 
 
         public reset(): void {
-            this.y = 100 + Math.floor(Math.random() * 380); // start shell at random location
-            this.x = 640; // start shell off stage
+            this.y = 100 + Math.floor(Math.random() * 350); // start diamond at random location
+            this.x = 640; // start diamond off stage
         }
 
         // PUBLIC METHODS .......................
         public update(): void {
 
-            this.x -= 3; // moves shell across the stage
+            this.x -= 3; // moves diamond across the stage
             this.checkBounds();
         }
     }

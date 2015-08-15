@@ -61,20 +61,37 @@
   <ItemGroup>
     <Content Include="assets\audio\breathing.mp3" />
     <Content Include="assets\audio\Powerup.wav" />
+    <Content Include="assets\images\back.png" />
     <Content Include="assets\images\background.jpg" />
     <Content Include="assets\images\boat.jpg" />
-    <Content Include="assets\images\diver.png" />
+    <Content Include="assets\images\bomb.png" />
+    <Content Include="assets\images\bullet.png" />
+    <Content Include="assets\images\diamond4.png" />
     <Content Include="assets\images\en.png" />
     <Content Include="assets\images\gameOver.png" />
+    <Content Include="assets\images\gun.png" />
+    <Content Include="assets\images\i1.png" />
+    <Content Include="assets\images\i2.png" />
     <Content Include="assets\images\island.png" />
+    <Content Include="assets\images\island1.png" />
+    <Content Include="assets\images\island4.png" />
+    <Content Include="assets\images\moveto2.png" />
+    <Content Include="assets\images\moveto3.png" />
     <Content Include="assets\images\play.png" />
+    <Content Include="assets\images\river1.png" />
+    <Content Include="assets\images\river2.png" />
+    <Content Include="assets\images\riverDown.png" />
+    <Content Include="assets\images\riverUp.png" />
+    <Content Include="assets\images\rock.png" />
     <Content Include="assets\images\sea.jpg" />
     <Content Include="assets\images\sea1.jpg" />
-    <Content Include="assets\images\shark.png" />
     <Content Include="assets\images\shell1.png" />
+    <Content Include="assets\images\ship.png" />
     <Content Include="assets\images\start.png" />
     <Content Include="assets\images\tryAgain.png" />
     <Content Include="assets\images\water.jpg" />
+    <Content Include="assets\images\instructionPage.png" />
+    <Content Include="Scripts\config\config.js" />
     <Content Include="Scripts\managers\assets.js" />
     <Content Include="Scripts\managers\collision.js" />
     <Content Include="packages.config" />
@@ -82,11 +99,11 @@
     <Content Include="Scripts\objects\gameobject.js.map" />
     <Content Include="Scripts\objects\ocean.js.map" />
     <Content Include="Scripts\objects\scoreboard.js" />
-    <Content Include="Scripts\objects\shell.js.map" />
     <Content Include="Scripts\utility\utility.js.map" />
     <Content Include="Scripts\managers\assets.js.map" />
     <Content Include="Scripts\managers\collision.js.map" />
     <Content Include="Scripts\objects\scoreboard.js.map" />
+    <Content Include="Scripts\config\config.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -103,7 +120,6 @@
     <Content Include="Scripts\lib\tweenjs-0.6.0.min.js" />
     <Content Include="Scripts\lib\Stats.js" />
     <Content Include="Scripts\objects\gameobject.js" />
-    <Content Include="Scripts\objects\shell.js" />
     <Content Include="Scripts\utility\utility.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -114,17 +130,34 @@
     <Folder Include="assets\fonts\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\config\config.ts" />
     <TypeScriptCompile Include="Scripts\managers\assets.ts" />
+    <TypeScriptCompile Include="Scripts\managers\bomb.ts" />
+    <TypeScriptCompile Include="Scripts\managers\bullet.ts" />
+    <TypeScriptCompile Include="Scripts\managers\bulletCollision.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
     <TypeScriptCompile Include="Scripts\game.ts" />
     <TypeScriptCompile Include="Scripts\objects\boat.ts" />
+    <TypeScriptCompile Include="Scripts\objects\bomb.ts" />
+    <TypeScriptCompile Include="Scripts\objects\bullet.ts" />
     <TypeScriptCompile Include="Scripts\objects\button.ts" />
+    <TypeScriptCompile Include="Scripts\objects\enemyBoat.ts" />
+    <TypeScriptCompile Include="Scripts\objects\enemyBoat2.ts" />
+    <TypeScriptCompile Include="Scripts\objects\enemyBoat3.ts" />
     <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
     <TypeScriptCompile Include="Scripts\objects\island.ts" />
-    <TypeScriptCompile Include="Scripts\objects\label.ts" />
+    <TypeScriptCompile Include="Scripts\objects\island2.ts" />
+    <TypeScriptCompile Include="Scripts\objects\level3Boat.ts" />
+    <TypeScriptCompile Include="Scripts\objects\level3Enemy.ts" />
+    <TypeScriptCompile Include="Scripts\objects\level3ScoreBoard.ts" />
     <TypeScriptCompile Include="Scripts\objects\ocean.ts" />
     <TypeScriptCompile Include="Scripts\objects\scoreboard.ts" />
-    <TypeScriptCompile Include="Scripts\objects\shell.ts" />
+    <TypeScriptCompile Include="Scripts\objects\diamond.ts" />
+    <TypeScriptCompile Include="Scripts\states\level2.ts" />
+    <TypeScriptCompile Include="Scripts\states\level3.ts" />
+    <TypeScriptCompile Include="Scripts\states\MoveToLevel2 .ts" />
+    <TypeScriptCompile Include="Scripts\states\MoveToLevel3.ts" />
+    <TypeScriptCompile Include="Scripts\states\win-lose.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\easeljs\easeljs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\preloadjs\preloadjs.d.ts" />

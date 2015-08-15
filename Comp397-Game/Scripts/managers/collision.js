@@ -21,9 +21,9 @@ var managers;
                         scoreboard.lives--;
                         if (scoreboard.lives == 0) {
                             changeState(2);
-                            scoreLabel = new createjs.Text("Your Scores: " + scoreboard.score, "40px Consolas", "#ffffffff");
-                            scoreLabel.x = 100;
-                            scoreLabel.y = 250;
+                            scoreLabel = new createjs.Text("Your Scores: " + scoreboard.score, "40px Consolas", "#ffffff");
+                            scoreLabel.x = 130;
+                            scoreLabel.y = 230;
                             stage.addChild(scoreLabel);
                         }
                         if (gameObject.name == "island1") {
@@ -62,13 +62,13 @@ var managers;
                             enemyBoat3.update();
                         }
                     }
-                    if (gameObject.name == "shell") {
+                    if (gameObject.name == "diamond") {
                         scoreboard.score += 100;
                         gameObject.destroyObject();
-                        shell = new objects.Shell(assets.loader.getResult("diamond"));
-                        stage.addChild(shell);
-                        shell.reset();
-                        shell.update();
+                        diamond = new objects.Diamond(assets.loader.getResult("diamond"));
+                        stage.addChild(diamond);
+                        diamond.reset();
+                        diamond.update();
                     }
                 }
                 gameObject.isColliding = true;

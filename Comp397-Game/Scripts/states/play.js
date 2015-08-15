@@ -9,21 +9,16 @@ var states;
             ocean = new objects.Ocean(assets.loader.getResult("ocean"));
             stage.addChild(ocean);
             //add shell object to stage
-            shell = new objects.Shell(assets.loader.getResult("shell"));
-            stage.addChild(shell);
+            diamond = new objects.Diamond(assets.loader.getResult("diamond"));
+            stage.addChild(diamond);
             // add boat object to stage
             boat = new objects.Boat(assets.loader.getResult("boat"));
             stage.addChild(boat);
-            /* add 3 shark objects to stage
-            for (var shark = 0; shark < 3; shark++) {
-                sharks[shark] = new objects.Shark(assets.loader.getResult("shark"));
-                stage.addChild(sharks[shark]);
-            }*/
             //add islands to the stage
-            for (var island = 0; island < 3; island++) {
-                islands[island] = new objects.Island(assets.loader.getResult("island"));
-                stage.addChild(islands[island]);
-            }
+            island1 = new objects.Island(assets.loader.getResult("island1"));
+            stage.addChild(island1);
+            island2 = new objects.Island2(assets.loader.getResult("island2"));
+            stage.addChild(island2);
             //add scoreboard
             scoreboard = new objects.ScoreBoard();
             //add collision manager
@@ -34,17 +29,12 @@ var states;
         Play.prototype.update = function () {
             ocean.update();
             boat.update();
-            shell.update();
-            /*
-            for (var shark = 0; shark < 3; shark++) {
-                sharks[shark].update();
-                collision.check(sharks[shark]);
-            }*/
-            for (var island = 0; island < 3; island++) {
-                islands[island].update();
-                collision.check(islands[island]);
-            }
-            collision.check(shell);
+            diamond.update();
+            island1.update();
+            island2.update();
+            collision.check(island1);
+            collision.check(island2);
+            collision.check(diamond);
             scoreboard.update();
         };
         return Play;

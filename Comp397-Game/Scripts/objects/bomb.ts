@@ -10,9 +10,8 @@
         }
 
         // PUBLIC METHODS
-        public init() {
-
-
+        public init()
+        {
             this.x = level3Enemy.x;
             this.y = level3Enemy.y;
         }

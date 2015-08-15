@@ -16,12 +16,11 @@ var objects;
             this.sound = "breath";
             this.name = "level3Enemy";
             this.x = 550;
-            this.y = 50;
+            this.y = 120;
             createjs.Sound.play(this.sound, { "loop": -1 });
         }
         // PUBLIC METHODS .......................
         Level3Enemy.prototype.update = function () {
-            // this.x += this.dx; // position boat under mouse
             if (config.MOVING) {
                 this.y += 3;
                 if (this.y > 430) {
@@ -30,7 +29,7 @@ var objects;
             }
             else {
                 this.y -= 3;
-                if (this.y < 40) {
+                if (this.y < 120) {
                     config.MOVING = true;
                 }
             }
